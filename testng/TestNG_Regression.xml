@@ -1,0 +1,22 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="RegressionTestSuite" parallel="none" verbose="1">
+	<listeners>
+		<listener class-name="com.epam.reportportal.testng.ReportPortalTestNGListener"></listener>
+	</listeners>
+	<test name="LoginTest" parallel="false">
+	<groups>
+		<define name="fast">
+			<include name="fast"/>
+		</define>
+
+		<run>
+			<include name="LoginTest"></include>
+		</run>
+	</groups>
+		<packages>
+			<package name="core.login.*" />
+		</packages>
+
+	</test>
+</suite>
